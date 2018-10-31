@@ -1,0 +1,11 @@
+<h1>Main Page</h1>
+<div >
+
+</div>
+
+<%= form_tag recipes_path, method: "get" do %>
+  <%= label_tag(:ingredients, "Enter Ingredients") %>
+  <%= text_field_tag(:ingredients) %>
+  <%= submit_tag("Search") %>
+
+<% end %>

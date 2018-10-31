@@ -1,0 +1,14 @@
+  <h1>Recipes With <%=@ingredients%></h1>
+  <section class="recipe-index-cards">
+<% if @recipes %>
+<% @recipes.each do |recipe| %>
+<div class="card w-25 card-padding">
+  <div class="card-body card-padding">
+    <h5 class="card-title"><%= recipe.name.titleize %></h5>
+    <p class="card-text">Link to Recipe Details</small></p>
+  </div>
+  <%= image_tag recipe.img, class: "card-img-bottom"%>
+</div>
+<% end %>
+<% end %>
+</section>
