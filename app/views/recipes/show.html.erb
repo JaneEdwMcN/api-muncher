@@ -1,0 +1,14 @@
+<h1><%= @recipe.name %></h1>
+<h3><%= link_to "Original Recipe ", @recipe.url %></h3>
+<h3>Ingredients:</h3>
+<ul>
+  <% @recipe.ingredients.each do |ingredient| %>
+  <li><%= ingredient %></li>
+  <% end %>
+</ul>
+<h3>Dietary Information:</h3>
+<ul>
+  <% @recipe.dietary_information.each do |info| %>
+  <li><%= info %></li>
+  <% end %>
+</ul>

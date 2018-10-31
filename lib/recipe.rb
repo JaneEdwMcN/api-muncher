@@ -1,5 +1,5 @@
 class Recipe
-  attr_reader :name, :id, :url, :img, :ingredientLines, :healthLabels
+  attr_reader :name, :id, :url, :img, :ingredients, :dietary_information
 
   def initialize(name, id, options = {} )
     raise ArgumentError if name == nil || name == "" || id == nil || id == ""
