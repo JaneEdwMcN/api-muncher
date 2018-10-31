@@ -82,3 +82,4 @@ group :test do
 end
 
 gem 'httparty'
+gem 'kaminari'

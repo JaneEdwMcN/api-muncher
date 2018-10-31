@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ApiMuncher</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>ApiMuncher</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <script src="https://developer.edamam.com/attribution/badge.js"></script>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+  <% if flash[:status] %>
+  <section class="alert alert-<%= flash[:status] %>">
+    <h3>
+      <%= flash[:result_text] %>
+    </h3>
+  </section>
+  <% end %>
+  <%= yield %>
+  <footer><div id="edamam-badge" data-color="white"></div></footer>
+</body>
 </html>

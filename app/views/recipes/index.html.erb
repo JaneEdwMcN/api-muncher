@@ -1,7 +1,7 @@
 <h1>Recipes With <%=@ingredients%></h1>
 <section class="recipe-index-cards">
-  <% if @recipes %>
-  <% @recipes.each do |recipe| %>
+  <% if @recipes_paginated %>
+  <% @recipes_paginated.each do |recipe| %>
   <div class="card w-25 card-padding">
     <div class="card-body card-padding">
       <h5 class="card-title"><%= recipe.name.titleize %></h5>
@@ -12,3 +12,5 @@
   <% end %>
   <% end %>
 </section>
+
+<h1><%= paginate @recipes_paginated %></h1>
