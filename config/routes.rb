@@ -5,6 +5,5 @@ Rails.application.routes.draw do
   get "/recipes/:id", to: "recipes#show", as: 'recipe'
 
   get '/recipes', to: 'recipes#index', as: 'recipes'
-  # get '/main', to: 'recipes#new', as: 'recipes_new'
-  # post '/main', to: 'recipes#create', as: 'recipes_create'
+
 end

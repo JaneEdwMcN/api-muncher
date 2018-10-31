@@ -20,8 +20,7 @@ class RecipesController < ApplicationController
     end
   end
 
-  def main
-  end
+  def main;  end
 
   private
   def ingredients

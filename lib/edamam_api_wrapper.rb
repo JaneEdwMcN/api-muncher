@@ -34,8 +34,14 @@ class EdamamApiWrapper
   private
 
   def self.create_recipe(api_params)
-    underscore = api_params["uri"].index("_") + 1
-    uri = api_params["uri"][(underscore)..-1]
+    if api_params["uri"]
+      if api_params["uri"].include? ("_")
+        underscore = api_params["uri"].index("_") + 1
+        uri = api_params["uri"][(underscore)..-1]
+      else
+        uri = api_params["uri"]
+      end
+    end
     return Recipe.new(
       api_params["label"],
       uri,
