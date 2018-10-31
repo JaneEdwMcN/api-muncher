@@ -5,9 +5,7 @@
   <div class="card w-25 card-padding">
     <div class="card-body card-padding">
       <h5 class="card-title"><%= recipe.name.titleize %></h5>
-      <% underscore = recipe.id.index("_") + 1 %>
-      <% uri_code = recipe.id[(underscore)..-1] %>
-      <p class="card-text"><%= link_to "Recipe Details", recipe_path(uri_code) %></small></p>
+      <p class="card-text"><%= link_to "Recipe Details", recipe_path(recipe.id) %></small></p>
     </div>
     <%= image_tag recipe.img, class: "card-img-bottom"%>
   </div>
