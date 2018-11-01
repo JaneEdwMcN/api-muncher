@@ -6,7 +6,7 @@ class EdamamApiWrapper
 
   def self.list_recipes(ingredients)
     url = BASE_URL + "search?" + "q=#{ingredients}" + "&app_id=#{ID}&app_key=#{KEY}" + "&to=100"
-    #add encode URL
+    #add encode URL??
     data = HTTParty.get(url)
     recipe_list = []
     if data["hits"].length > 0
@@ -36,8 +36,7 @@ class EdamamApiWrapper
   def self.create_recipe(api_params)
     if api_params["uri"]
       if api_params["uri"].include? ("_")
-        underscore = api_params["uri"].index("_") + 1
-        uri = api_params["uri"][(underscore)..-1]
+        uri =  api_params["uri"].partition("_").last
       else
         uri = api_params["uri"]
       end

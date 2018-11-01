@@ -16,6 +16,7 @@
 @import "bootstrap";
 /* Import scss content */
 @import "**/*";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 
 .recipe-index-cards {
   display: flex;
@@ -25,5 +26,51 @@
 }
 
 .card-padding {
-    padding: 1em;
+  padding: 1em;
+}
+
+.background-img {
+  background-image: image-url('food.jpg');
+  background-size: 100vw 100vh;
+}
+
+.input-group.md-form.form-sm.form-2 input.lime-border  {
+  border: 1px solid #fea901;
+  height: 3em;
+}
+
+.btn-background {
+  background: #fea901;
+  border: none;
+}
+
+.main-search {
+  padding: 5em;
+}
+
+.search {
+  padding: 3em;
+}
+
+h1 {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.recipe-index-cards a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.pages {
+  padding: 1em;
+  text-align: center;
+}
+
+.pagination {
+  display: block;
 }

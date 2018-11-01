@@ -21,7 +21,9 @@ class RecipesController < ApplicationController
     end
   end
 
-  def main;  end
+  def main
+    @on_main = true
+  end
 
   private
   def ingredients
