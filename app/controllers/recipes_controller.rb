@@ -8,7 +8,7 @@ class RecipesController < ApplicationController
       flash[:result_text] = "No recipes found for #{@ingredients}. Please try again with different words."
       redirect_to root_path
     else
-      @recipes_paginated = Kaminari.paginate_array(@recipes).page(params[:page]).per(10)
+      @recipes_paginated = Kaminari.paginate_array(@recipes).page(params[:page]).per(8)
     end
   end
 

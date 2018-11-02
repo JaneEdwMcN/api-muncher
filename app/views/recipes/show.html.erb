@@ -1,12 +1,12 @@
-<h2><%= @recipe.name %></h2>
-<h4>by <%= @recipe.author %></h4>
+<h2 class = "show-h2"><%= @recipe.name %></h2>
+<h4 class = "show-h4">by <%= @recipe.author %></h4>
 <section class = "text-center">
 <p class = "btn btn-outline-dark"><%= link_to "View Original Recipe ", @recipe.url, target: :_blank %></p>
 </section>
 <article class = "show-container">
   <section>
     <%= image_tag @recipe.img, class: "img"%>
-    <h3 class = "show-heading">Dietary Information</h3>
+    <h3 class = "diet-heading">Dietary Information</h3>
     <ul>
       <% @recipe.dietary_information.each do |info| %>
       <li><%= info %></li>

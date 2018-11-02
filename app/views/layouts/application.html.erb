@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ApiMuncher</title>
+  <title>No-nana</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= favicon_link_tag(source='nonana.png') %>
   <script src="https://developer.edamam.com/attribution/badge.js"></script>
 </head>
 <%  if @on_main %>
@@ -14,19 +15,19 @@
   <% else %>
   <body>
     <% end %>
-    <header>
-      <%  if !@on_main %>
-      <nav class="navbar fixed-top navbar-white bg-white search">
-        <h1 class = "fixed-top">Muncher, a Banana Free Recipe Finder </h1>
+    <%  if !@on_main %>
+    <header class = "header-background-color fixed-top">
+      <nav class="navbar  navbar-white search">
+        <h1 class = "header-background-color non-main-h1" >No-nana, a Banana Free Recipe Finder </h1>
         <%= form_tag recipes_path, method: "get", class: "input-group md-form form-sm form-2 pl-0" do %>
-        <%= text_field_tag :ingredients, nil, placeholder: "Search", class: 'form-control my-0 py-1 yellow-border'  %>
+        <%= text_field_tag :ingredients, nil, placeholder: "Search", class: 'form-control my-0 py-1 green-border'  %>
         <%= button_tag( :class => "input-group-append btn-background") do %>
         <span class="input-group-text lighten-2 btn-background" id="basic-text1"><i class="fa fa-search text-grey remove-submit-btn-style"
           aria-hidden="true"></i></span><% end %>
           <% end %>
         </nav>
-        <% end %>
       </header>
+      <% end %>
       <% if flash[:status] %>
       <section class="alert alert-<%= flash[:status] %>">
         <h3>
@@ -41,7 +42,7 @@
         <footer class = "page-footer">
           <% end %>
           <div id="edamam-badge" class = "text-right py-3" data-color="transparent"></div>
-          <div class="footer-copyright text-center py-3"><small>© 2018 Copyright: Jane EM</small></div>
+          <div class="footer-copyright text-center py-3"><small>© 2018 Copyright: Jane EM - in partnership with Onion Free America © </small></div>
         </footer>
       </body>
       </html>
