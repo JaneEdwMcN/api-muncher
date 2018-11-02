@@ -18,13 +18,12 @@ describe Recipe do
     expect(recipe.id).must_equal "ID"
   end
 
-  it "can be created with a name, id, url, img, ingredients, and dietary_information" do
+  it "can be created with a name, id, url, img, ingredients, dietary_information, and author" do
 
     dietary_information = ["vegan", "fat-free"]
     ingredients = ["chocolate", "whipped cream", "sugar", "butter"]
 
-    myRecipe = Recipe.new('chocolate cake', '12345', url: "www.cake.com", img: "www.cake.jpg", ingredients: ingredients, dietary_information: dietary_information)
-
+    myRecipe = Recipe.new('chocolate cake', '12345', url: "www.cake.com", img: "www.cake.jpg", ingredients: ingredients, dietary_information: dietary_information, author: "Martha Stewart")
     expect(myRecipe.name).must_equal 'chocolate cake'
     expect(myRecipe.id).must_equal '12345'
     expect(myRecipe.url).must_equal "www.cake.com"

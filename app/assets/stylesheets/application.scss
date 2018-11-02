@@ -34,7 +34,7 @@
   background-size: 100vw 100vh;
 }
 
-.input-group.md-form.form-sm.form-2 input.lime-border  {
+.input-group.md-form.form-sm.form-2 input.yellow-border  {
   border: 1px solid #fea901;
   height: 3em;
 }
@@ -50,10 +50,7 @@
 
 .search {
   padding: 3em;
-}
-
-h1 {
-  text-align: center;
+  padding-top: 5em;
 }
 
 a {
@@ -66,6 +63,12 @@ a {
   color: white;
 }
 
+p.card-text.btn.btn-outline-dark:hover {
+  a {
+    color: white;
+  }
+}
+
 .pages {
   padding: 1em;
   text-align: center;
@@ -73,4 +76,28 @@ a {
 
 .pagination {
   display: block;
+}
+
+.show-container {
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
+  justify-items: center;
+  padding: 2em;
+}
+
+h2, h3, h4, h5 {
+  text-align: center;
+  padding-top: 0.5em;
+}
+
+h1 {
+  text-align: center;
+}
+
+body {
+  padding-top: 10em;
+}
+
+img {
+  border-radius: 2%
 }

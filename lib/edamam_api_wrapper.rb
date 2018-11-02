@@ -35,11 +35,8 @@ class EdamamApiWrapper
 
   def self.create_recipe(api_params)
     if api_params["uri"]
-      if api_params["uri"].include? ("_")
-        uri =  api_params["uri"].partition("_").last
-      else
-        uri = api_params["uri"]
-      end
+      uri = api_params["uri"]
+      uri =  api_params["uri"].partition("_").last if api_params["uri"].include? ("_")
     end
     return Recipe.new(
       api_params["label"],
@@ -48,7 +45,8 @@ class EdamamApiWrapper
         url: api_params["url"],
         img: api_params["image"],
         ingredients: api_params["ingredientLines"],
-        dietary_information: api_params["healthLabels"]
+        dietary_information: api_params["healthLabels"],
+        author: api_params["source"]
       }
     )
   end

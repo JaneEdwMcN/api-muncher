@@ -54,7 +54,7 @@ describe EdamamApiWrapper do
   describe "create_recipe" do
     it "can create a recipe with valid params" do
       params = {
-        "label" => "choclate cake", "uri" => "_1234567", "url" => "www.cake.com", "image" => "www.cake.jpg", "ingredientLines" => ["butter", "choclate", "sugar"], "healthLabels" => ["vegan"]
+        "label" => "choclate cake", "uri" => "_1234567", "url" => "www.cake.com", "image" => "www.cake.jpg", "ingredientLines" => ["butter", "choclate", "sugar"], "healthLabels" => ["vegan"], "source" => "Martha Stewart"
       }
       myRecipe = EdamamApiWrapper.create_recipe(params)
       expect(myRecipe).must_be_kind_of Recipe

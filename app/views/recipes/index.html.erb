@@ -1,16 +1,17 @@
-<h1>Recipes With "<%=@ingredients%>"</h1>
+<section>
+  <h2>Recipes with "<%=@ingredients%>"</h2>
+</section>
+<h3 class = "pages"><%= paginate @recipes_paginated %></h3>
 <section class="recipe-index-cards">
   <% if @recipes_paginated %>
   <% @recipes_paginated.each do |recipe| %>
-  <div class="card w-25 card-padding">
+  <div class="card w-25 card-padding text-center">
     <div class="card-body card-padding">
       <h5 class="card-title"><%= recipe.name.titleize %></h5>
-      <p class="card-text btn btn-outline-dark"><%= link_to "Recipe Details", recipe_path(recipe.id) %></small></p>
+      <p class="card-text btn btn-outline-dark"><%= link_to "Recipe Details", recipe_path(recipe.id) %></p>
     </div>
     <%= image_tag recipe.img, class: "card-img-bottom"%>
   </div>
   <% end %>
   <% end %>
 </section>
-
-<h2 class = "pages"><%= paginate @recipes_paginated %></h2>

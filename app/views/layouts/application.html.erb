@@ -16,31 +16,32 @@
     <% end %>
     <header>
       <%  if !@on_main %>
-      <section class = "search">
-      <%= form_tag recipes_path, method: "get", class: "input-group md-form form-sm form-2 pl-0" do %>
-      <%= text_field_tag :ingredients, nil, placeholder: "Search", class: 'form-control my-0 py-1 lime-border'  %>
-      <%= button_tag( :class => "input-group-append btn-background") do %>
-      <span class="input-group-text lighten-2 btn-background" id="basic-text1"><i class="fa fa-search text-grey remove-submit-btn-style"
-        aria-hidden="true"></i></span><% end %>
+      <nav class="navbar fixed-top navbar-white bg-white search">
+        <h1 class = "fixed-top"> Muncher </h1>
+        <%= form_tag recipes_path, method: "get", class: "input-group md-form form-sm form-2 pl-0" do %>
+        <%= text_field_tag :ingredients, nil, placeholder: "Search", class: 'form-control my-0 py-1 yellow-border'  %>
+        <%= button_tag( :class => "input-group-append btn-background") do %>
+        <span class="input-group-text lighten-2 btn-background" id="basic-text1"><i class="fa fa-search text-grey remove-submit-btn-style"
+          aria-hidden="true"></i></span><% end %>
+          <% end %>
+        </nav>
         <% end %>
+      </header>
+      <% if flash[:status] %>
+      <section class="alert alert-<%= flash[:status] %>">
+        <h3>
+          <%= flash[:result_text] %>
+        </h3>
       </section>
       <% end %>
-    </header>
-    <% if flash[:status] %>
-    <section class="alert alert-<%= flash[:status] %>">
-      <h3>
-        <%= flash[:result_text] %>
-      </h3>
-    </section>
-    <% end %>
-    <%= yield %>
-    <%  if @on_main %>
-    <footer class = "page-footer fixed-bottom">
-      <% else %>
-      <footer class = "page-footer">
-        <% end %>
-        <div id="edamam-badge" class = "text-right py-3" data-color="transparent"></div>
-        <div class="footer-copyright text-center py-3">© 2018 Copyright: Jane EM
-        </footer>
-      </body>
-      </html>
+      <%= yield %>
+      <%  if @on_main %>
+      <footer class = "page-footer fixed-bottom">
+        <% else %>
+        <footer class = "page-footer">
+          <% end %>
+          <div id="edamam-badge" class = "text-right py-3" data-color="transparent"></div>
+          <div class="footer-copyright text-center py-3">© 2018 Copyright: Jane EM
+          </footer>
+        </body>
+        </html>
