@@ -17,7 +17,7 @@
     <header>
       <%  if !@on_main %>
       <nav class="navbar fixed-top navbar-white bg-white search">
-        <h1 class = "fixed-top"> Muncher </h1>
+        <h1 class = "fixed-top">Muncher, a Banana Free Recipe Finder </h1>
         <%= form_tag recipes_path, method: "get", class: "input-group md-form form-sm form-2 pl-0" do %>
         <%= text_field_tag :ingredients, nil, placeholder: "Search", class: 'form-control my-0 py-1 yellow-border'  %>
         <%= button_tag( :class => "input-group-append btn-background") do %>
