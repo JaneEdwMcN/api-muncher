@@ -1,6 +1,8 @@
 <h2><%= @recipe.name %></h2>
 <h4>by <%= @recipe.author %></h4>
-<h5><%= link_to "View Original Recipe ", @recipe.url, target: :_blank %></h5>
+<section class = "text-center">
+<p class = "btn btn-outline-dark"><%= link_to "View Original Recipe ", @recipe.url, target: :_blank %></p>
+</section>
 <article class = "show-container">
   <section>
     <%= image_tag @recipe.img, class: "img"%>

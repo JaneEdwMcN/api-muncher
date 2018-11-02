@@ -22,7 +22,10 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 3em;
+  padding-bottom: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 0;
 }
 
 .card-padding {
@@ -45,7 +48,7 @@
 }
 
 .main-search {
-  padding: 5em;
+  padding: 3em;
 }
 
 .search {
@@ -63,15 +66,8 @@ a {
   color: white;
 }
 
-p.card-text.btn.btn-outline-dark:hover {
-  a {
-    color: white;
-  }
-}
-
 .pages {
   padding: 1em;
-  text-align: center;
 }
 
 .pagination {
@@ -100,4 +96,55 @@ body {
 
 img {
   border-radius: 2%
+}
+
+.pagination-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.page-link {
+  color: #fea901;
+}
+
+.page-item.active .page-link {
+  background-color: #fea901;
+  border-color: #fea901;
+}
+
+.page-link:hover {
+  color: #cb8801;
+  background-color: #ffeecc;
+  border-color: #ffeecc;
+}
+
+.btn-outline-dark {
+  border-color: #fea901;
+}
+
+
+element.style {
+}
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+.btn-outline-dark:hover {
+  background-color: #fea901;
+  border-color: #fea901;
+}
+
+.btn-outline-dark a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.btn-outline-dark:hover {
+  a {
+    color: white;
+  }
+}
+
+.white-text-color {
+  color: white;
 }
