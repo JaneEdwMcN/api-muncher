@@ -141,9 +141,6 @@ img {
   border-color: #959227;
 }
 
-
-element.style {
-}
 .btn:not(:disabled):not(.disabled) {
   cursor: pointer;
 }
@@ -182,4 +179,52 @@ header {
 
 .show-h4 {
   padding-bottom: 0.5em;
+}
+
+
+@media only screen and (max-width: 900px) {
+  .background-img {
+    background-image: none;
+    background-size: auto;
+  }
+
+  .white-text-color {
+    color: #525015;
+  }
+}
+
+@media only screen and (max-width: 625px) {
+
+  h3, .h3 {
+    font-size: 1rem;
+  }
+
+  .index-heading {
+    margin-top: 4em;
+  }
+
+  .search {
+    margin: 0em;
+    margin-top: 1em;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+
+  .w-25 {
+    width: 75% !important;
+  }
+
+  img {
+    width: 150px;
+    height:  auto;
+  }
+
+  .show-h4 {
+    font-size: 1em;
+  }
+
+  .small-ingredients {
+    font-size: .85em;
+  }
 }
