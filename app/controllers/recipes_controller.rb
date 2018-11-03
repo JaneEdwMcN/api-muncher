@@ -2,7 +2,8 @@ class RecipesController < ApplicationController
   before_action :ingredients, except: [:main, :show]
 
   def index
-    @recipes = EdamamApiWrapper.list_recipes(@ingredients)
+    health_labels = params[:health_labels]
+    @recipes = EdamamApiWrapper.list_recipes(@ingredients, health_labels)
     if @recipes.nil?
       flash[:status] = :warning
       flash[:result_text] = "No recipes found for #{@ingredients}. Please try again with different words."

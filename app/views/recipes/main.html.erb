@@ -5,5 +5,9 @@
   <%= button_tag( :class => "input-group-append btn-background") do %>
   <span class="input-group-text lighten-2 btn-background" id="basic-text1"><i class="fa fa-search text-grey remove-submit-btn-style"
     aria-hidden="true"></i></span><% end %>
+    <%= label_tag 'Alcohol-Free' %>
+    <%= check_box_tag "health_labels[]", "alcohol-free", nil, class: "fake" %>
+    <%= label_tag 'Tree-Nut-Free' %>
+    <%= check_box_tag "health_labels[]", "tree-nut-free", nil, class: "fake" %>
     <% end %>
   </section>
