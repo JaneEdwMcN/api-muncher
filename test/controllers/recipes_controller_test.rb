@@ -46,7 +46,6 @@ describe RecipesController do
 
     it "redirects and shows errors with invalid id params" do
       id = "hello"
-
       VCR.use_cassette('recipe') do
         get recipe_path(id)
 

@@ -23,6 +23,13 @@ describe EdamamApiWrapper do
       end
     end
 
+    it "returns nil if not given a word" do
+      VCR.use_cassette("recipes") do
+        recipes = EdamamApiWrapper.list_recipes(nil)
+        expect(recipes).must_be_nil
+      end
+    end
+
   end
   describe "find_recipe" do
     it "can find a recipe with valid uri" do
