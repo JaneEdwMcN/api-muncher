@@ -28,9 +28,15 @@ describe EdamamApiWrapper do
         recipes = EdamamApiWrapper.list_recipes(nil)
         expect(recipes).must_be_nil
       end
+
+      VCR.use_cassette("recipes") do
+        recipes = EdamamApiWrapper.list_recipes("")
+        expect(recipes).must_be_nil
+      end
     end
 
   end
+
   describe "find_recipe" do
     it "can find a recipe with valid uri" do
       VCR.use_cassette("recipe") do
@@ -53,6 +59,11 @@ describe EdamamApiWrapper do
     it "won't find a recipe without a uri" do
       VCR.use_cassette("recipe") do
         recipe = EdamamApiWrapper.find_recipe("")
+        expect(recipe).must_be_nil
+      end
+
+      VCR.use_cassette("recipe") do
+        recipe = EdamamApiWrapper.find_recipe(nil)
         expect(recipe).must_be_nil
       end
     end
