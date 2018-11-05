@@ -9,13 +9,13 @@ class EdamamApiWrapper
     #add encode URL??
     data = HTTParty.get(url)
     recipe_list = []
-    if data["hits"].length > 0
+    if data["hits"].nil? || data["hits"] == []
+      return nil
+    else
       data["hits"].each do |recipe_data|
         recipe_list << create_recipe(recipe_data["recipe"])
       end
       return recipe_list
-    else
-      return nil
     end
 
   end
